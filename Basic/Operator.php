@@ -18,7 +18,7 @@ echo "<br>";
 $x = 10;
 $y = 5;
 $isEqual = ($x == $y); //সমান 
-echo $isEqual;
+echo $x == $y;
 echo "<br>";
 $isIdentical = ($a === $b); //পরিচিত
 echo $isIdentical;
