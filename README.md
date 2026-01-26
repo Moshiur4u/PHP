@@ -43,3 +43,45 @@ git status                 # Check repository status
 2. Stage changes with `git add`
 3. Commit with `git commit`
 4. Push to remote with `git push`
+5. Pull latest changes with `git pull`
+
+## Additional Commands
+
+### Commit History
+
+```bash
+git log                     # View commit history
+git log --oneline           # Compact commit history view
+git log --graph --all       # Visual branch history
+```
+
+### Branch Management
+
+````bash
+git branch -a               # List all branches
+git branch <name>           # Create new branch
+git push origin <branch>    # Push branch to remote
+git pull origin <branch>    # Pull branch from remote
+git checkout <branch>       # Switch to branch
+git switch <branch>         # Switch to branch (newer syntax)
+### Undoing Changes
+
+```bash
+git restore <file>          # Discard changes in working directory
+git reset HEAD <file>       # Unstage file
+git revert <commit>         # Create new commit that undoes changes
+git reset --hard <commit>   # Reset to specific commit (destructive)
+```bash
+git branch -d <branch>      # Delete branch locally
+git branch -D <branch>      # Force delete branch locally
+git push origin --delete <branch>  # Delete branch on remote
+```
+
+### Stashing Changes
+
+```bash
+git stash                   # Temporarily save changes
+git stash pop               # Apply most recent stash
+git stash list              # View all stashes
+```
+````
