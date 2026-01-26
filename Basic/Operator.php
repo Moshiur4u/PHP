@@ -4,13 +4,25 @@
 $a = 10;
 $b = 5;
 $sum = $a + $b; //যোগ
+echo $sum;
+echo "<br>";
 $difference = $a - $b; //বিয়োগ
+echo $difference;
+echo "<br>";
 $product = $a * $b; //গুণ
 $quotient = $a / $b; //ভাগ 
 $modulus = $a % $b; //মডুলাস
+echo $modulus;
+echo "<br>";
 //Comparison Operators (তুলনা অপারেটর):
-$isEqual = ($a == $b); //সমান 
+$x = 10;
+$y = 5;
+$isEqual = ($x == $y); //সমান 
+echo $isEqual;
+echo "<br>";
 $isIdentical = ($a === $b); //পরিচিত
+echo $isIdentical;
+echo "<br>";
 $isNotEqual = ($a != $b); //সমান নয়
 $isGreater = ($a > $b); //বড়
 $isLess = ($a < $b); //ছোট
