@@ -16,7 +16,7 @@ echo $modulus;
 echo "<br>";
 //Comparison Operators (তুলনা অপারেটর):
 $x = 10;
-$y = 5;
+$y = 10;
 $isEqual = ($x == $y); //সমান 
 echo $isEqual, "সমান নয়";
 echo "<br>";
@@ -24,7 +24,7 @@ $isIdentical = ($x === $y); //পরিচিত
 echo $isIdentical, "পরিচিত নয়";
 echo "<br>";
 $isNotEqual = ($x != $y); //সমান নয়
-echo $isNotEqual;
+echo $isNotEqual, "সমান নয়";
 echo "<br>";
 $isGreater = ($a > $b); //বড়
 echo $isGreater;
