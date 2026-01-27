@@ -18,14 +18,19 @@ echo "<br>";
 $x = 10;
 $y = 5;
 $isEqual = ($x == $y); //সমান 
-echo $x == $y;
+echo $isEqual, "সমান নয়";
 echo "<br>";
-$isIdentical = ($a === $b); //পরিচিত
-echo $isIdentical;
+$isIdentical = ($x === $y); //পরিচিত
+echo $isIdentical, "পরিচিত নয়";
 echo "<br>";
-$isNotEqual = ($a != $b); //সমান নয়
+$isNotEqual = ($x != $y); //সমান নয়
+echo $isNotEqual;
+echo "<br>";
 $isGreater = ($a > $b); //বড়
+echo $isGreater;
 $isLess = ($a < $b); //ছোট
+echo $isLess;
+echo "<br>";
 $isGreaterOrEqual = ($a >= $b); //বড় বা সমান
 $isLessOrEqual = ($a <= $b); //ছোট বা সমান
 //Logical Operators (লজিক্যাল অপারেটর):
