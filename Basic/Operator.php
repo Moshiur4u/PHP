@@ -14,6 +14,8 @@ $quotient = $a / $b; //ভাগ
 $modulus = $a % $b; //মডুলাস
 echo $modulus;
 echo "<br>";
+echo "<hr>";
+echo "------------------";
 //Comparison Operators (তুলনা অপারেটর):
 $x = 10;
 $y = 10;
