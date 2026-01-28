@@ -180,9 +180,6 @@
                             $output = `ls -l`; // Execute shell command
                             echo "Output of ls -l:\n" . $output;
                             <hr>
-
-
-
 </body>
 
 </html>
