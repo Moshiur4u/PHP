@@ -50,9 +50,9 @@ $c %= 3; //মডুলাস অ্যাসাইনমেন্ট
 $increment = ++$a; //ইনক্রিমেন্ট
 $decrement = --$b; //ডিক্রিমেন্ট
 //String Operators (স্ট্রিং অপারেটর):
-$str1 = "Hello, ";
+$str1 = "Hello,";
 $str2 = "World!";
-$concatenated = $str1 . $str2; //স্ট্রিং সংযোজন
+echo $str1 . $str2; //concatenated স্ট্রিং সংযোজন
 $str1 .= "PHP is great."; //স্ট্রিং সংযোজন এবং অ্যাসাইন
 //Array Operators (অ্যারে অপারেটর):
 $array1 = array("a" => "Apple", "b" => "Banana");
