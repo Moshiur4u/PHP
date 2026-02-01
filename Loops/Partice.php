@@ -8,6 +8,7 @@ while (condition) {
 do {
     # code...
 } while (condition);
+//For Loop
 for ($i = 0; $i < 10; $i++) {
     # code...
 }
