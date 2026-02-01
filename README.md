@@ -76,8 +76,15 @@ git branch -d <branch>      # Delete branch locally
 git branch -D <branch>      # Force delete branch locally
 git push origin --delete <branch>  # Delete branch on remote
 ```
+###git file Delete
+1. Enter the Folder
+2. cd <Folder>
+```bash
+git rm <File Name With Extensions>
+```
 
 ### Stashing Changes
+
 
 ```bash
 git stash                   # Temporarily save changes
