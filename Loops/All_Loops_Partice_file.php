@@ -64,6 +64,7 @@ for ($i = 0; $i < 10; $i++) {
 }
 echo "\n\n";
 
+
 // Example 2: Using continue to skip iterations
 echo "Example 2: Continue Statement\n";
 for ($i = 0; $i < 10; $i++) {
@@ -73,6 +74,8 @@ for ($i = 0; $i < 10; $i++) {
     echo $i . " ";
 }
 echo "\n\n";
+
+
 
 // Example 3: Break with nested loops
 echo "Example 3: Break in Nested Loops\n";
@@ -86,6 +89,8 @@ for ($i = 1; $i <= 3; $i++) {
 }
 echo "\n\n";
 
+
+
 // Example 4: While loop with break
 echo "Example 4: While Loop with Break\n";
 $count = 0;
@@ -97,6 +102,8 @@ while ($count < 10) {
     $count++;
 }
 echo "\n";
+
+
 // Do-While Loop Example
 // The loop executes at least once, then checks the condition
 $i = 1;
@@ -140,6 +147,8 @@ do {
     $i++;
 } while ($i < 3);
 
+
+
 // Example 2: Loop with user input simulation
 echo "\nExample 2: Menu simulation\n";
 $choice = 0;
@@ -148,6 +157,8 @@ do {
     $choice = rand(0, 2);
     echo "You chose: $choice\n";
 } while ($choice != 0);
+
+
 
 //do while loop
 do {
@@ -161,6 +172,8 @@ do {
 
 echo "Password accepted!\n";
 
+
+
 // Example 3: Do-while with break
 echo "\nExample 3: With break\n";
 $count = 0;
@@ -171,6 +184,8 @@ do {
     echo "Count: $count\n";
     $count++;
 } while ($count < 10);
+
+
 
 // Example 4: Nested do-while
 echo "\nExample 4: Nested do-while\n";
@@ -185,6 +200,8 @@ do {
     $x++;
 } while ($x < 2);
 
+
+
 // Example 5: Do-while with continue
 echo "\nExample 5: With continue\n";
 $num = 0;
@@ -195,6 +212,9 @@ do {
     }
     echo "Number: $num\n";
 } while ($num < 4);
+
+
+
 // Example 6: Do-while loop counting down   
 echo "\nExample 6: Counting Down\n";
 $i = 5;
@@ -203,6 +223,8 @@ do {
     $i--;
 } while ($i > 0);
 echo "\n";
+
+
 // Example 7: Do-while loop with user-defined limit
 $limit = 3; // This can be set based on user input  
 echo "Example 7: User-defined limit\n";
@@ -212,6 +234,8 @@ do {
     $i++;
 } while ($i <= $limit);
 echo "\n";
+
+
 // Additional Examples of Break and Continue Statements
 // Example 1: Using break to exit a loop
 echo "Example 1: Break Statement\n";
@@ -222,6 +246,8 @@ for ($i = 0; $i < 10; $i++) {
     echo $i . " ";
 }
 echo "\n\n";
+
+
 // Example 2: Using continue to skip iterations
 echo "Example 2: Continue Statement\n";
 for ($i = 0; $i < 10; $i++) {
@@ -231,6 +257,8 @@ for ($i = 0; $i < 10; $i++) {
     echo $i . " ";
 }
 echo "\n\n";
+
+
 // Example 3: Break with nested loops
 echo "Example 3: Break in Nested Loops\n";
 for ($i = 1; $i <= 3; $i++) {
@@ -242,6 +270,8 @@ for ($i = 1; $i <= 3; $i++) {
     }
 }
 echo "\n\n";
+
+
 // Example 4: While loop with break
 echo "Example 4: While Loop with Break\n";
 $count = 0;
@@ -253,6 +283,8 @@ while ($count < 10) {
     $count++;
 }
 echo "\n";
+
+
 // Do-While Loop Example
 echo "Example 5: Do-While Loop with Continue\n";
 $num = 0;
@@ -263,6 +295,8 @@ do {
     }
     echo "Number: $num\n";
 } while ($num < 4);
+
+
 // Example 6: Do-While Loop with Break
 echo "\nExample 6: Do-While Loop with Break\n";
 $count = 0;
@@ -273,6 +307,8 @@ do {
     echo "Count: $count\n";
     $count++;
 } while ($count < 5);
+
+
 // Example 7: Nested Do-While Loops with Break
 echo "\nExample 7: Nested Do-While Loops with Break\n";
 $i = 0;
@@ -288,6 +324,8 @@ do {
     echo "\n";
     $i++;
 } while ($i < 2);
+
+
 // Example 8: Do-While Loop Counting Down with Continue
 echo "\nExample 8: Counting Down with Continue\n";
 $i = 5;
@@ -299,6 +337,9 @@ do {
     echo "i = $i\n";
     $i--;
 } while ($i > 0);
+
+
+
 // Example 9: Do-While Loop with User-Defined Limit and Break
 echo "\nExample 9: User-Defined Limit with Break\n";
 $limit = 5; // This can be set based on user input
