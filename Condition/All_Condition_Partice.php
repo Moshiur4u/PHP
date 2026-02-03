@@ -1,21 +1,27 @@
 <?php
-if (condition) {
+if ('condition') {
     # code...
 }
+
+
 //ifelse--------------
-if (condition) {
+if ('condition') {
     # code...
 } else {
     # code...
 }
+
+
 //ifelse if--------------
-if (condition) {
+if ('condition') {
     # code...
-} elseif (condition) {
+} elseif ('condition') {
     # code...
 } else {
     # code...
 }
+
+
 //switch--------------
 switch ($variable) {
     case 'value1':
@@ -28,7 +34,11 @@ switch ($variable) {
         # code...
         break;
 }
+
+
 //Ternary Operator--------------
-$result = (condition) ? 'value if true' : 'value if false';
+$result = ('condition') ? 'value if true' : 'value if false';
+
+
 //Null Coalescing Operator--------------
 $value = $variable ?? 'default value';
