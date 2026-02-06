@@ -1,6 +1,6 @@
 # loops
 
-## loops--------------While Loop
+## While---------- Loop
 
 ```bash
  while ("condition") {
@@ -9,7 +9,7 @@
 
 ```
 
-## Do While Loop
+## Do---- While Loop
 
 ```bash
 do {
@@ -17,7 +17,7 @@ do {
 } while ("condition");
 ```
 
-## For Loop
+## For----- Loop
 
 ```bash
 for ($i = 0; $i < 10; $i++) {
@@ -25,14 +25,14 @@ for ($i = 0; $i < 10; $i++) {
 }
 ```
 
-## Foreach Loop
+## Foreach------- Loop
 
 ```bash
 foreach ($array as $value) { # code...
 }
 ```
 
-## foreach loop with continue
+## foreach------ loop with continue-----
 
 ### echo "Example 7: Foreach Loop with Continue\n";
 
@@ -47,7 +47,7 @@ echo $item . " ";
 echo "\n";
 ```
 
-## Associative Array Foreach Loop
+## Associative Array Foreach------ Loop
 
 ```bash
 foreach ($array as $key => $value) {
