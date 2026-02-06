@@ -271,12 +271,10 @@ echo "\n";
 ```
 
 ## Example 7: Do-while loop with user-defined limit
-
-## $limit = 3; // This can be set based on user input
-
-## echo "Example 7: User-defined limit\n";
+### echo "Example 7: User-defined limit\n";
 
 ```bash
+$limit = 3; // This can be set based on user input
 $i = 1;
 do {
     echo "i = $i\n";
@@ -287,7 +285,7 @@ echo "\n";
 
 ## Additional Examples of Break and Continue Statements
 
-### Example 1: Using break to exit a loop
+## Example 1: Using break to exit a loop
 
 ### echo "Example 1: Break Statement\n";
 
