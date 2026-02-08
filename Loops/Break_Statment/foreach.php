@@ -7,5 +7,7 @@ foreach ($array as $print) {
 echo "<br>";
 $array2 = ['Moshiur=32', "Mim=24", "Imtiaz=3"];
 foreach ($array2 as $key => $value) {
-    echo "Age Is : - $value";
+    // echo "Age Is : - $value";
+    echo "<hr>";
+    echo "$key . $value";
 }
