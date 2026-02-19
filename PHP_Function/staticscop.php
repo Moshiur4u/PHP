@@ -1,13 +1,15 @@
 <?php
-// একটা প্রোগ্রামে ফংশন কত বার কাল করা হইছে তা জানার জন্য 
-$count = 0;
-function countx()
-{
-    global $count;
-    $count++;
+session_start(); // সেশন শুরু করুন
+
+// লগিন হলে (ধরি ফর্ম থেকে ডেটা আসছে)
+if ($_POST['username'] ?? '' === 'admin' && ($_POST['password'] ?? '') === '123') {
+    $_SESSION['user'] = 'admin';
+    echo "লগিন সফল!";
 }
-echo countx();
-echo countx();
-echo countx();
-echo countx();
-echo countx();
+// ইউজার লগিন করেছে কিনা চেক
+elseif (isset($_SESSION['user'])) {
+    echo "স্বাগতম, " . $_SESSION['user'] . "!";
+} else {
+    echo "লগিন করুন।";
+}
+?>
