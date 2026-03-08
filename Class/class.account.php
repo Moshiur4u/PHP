@@ -1,9 +1,9 @@
 <?php
 class Account
 {
-
-    public $accountNumber;
-    public $balanch;
+    // অব্জেক্টকে পাবলিক থেকে প্রিভেট করার মাধ্যমে encapsulation করা হয় জার ফলে অব্জেক্টকে বাহির থেকে অ্যাক্সেস করা জবে না ।
+    private $accountNumber;
+    private $balanch;
     // construct এর মাধ্যমে  একাধিক ভারিয়াব্লে এর কাজ করা হয়।
     function __construct($accountNumber, $balanch)
     {
@@ -30,15 +30,17 @@ class Account
         $this->balanch -= $amount;
     }
 }
-$MoshiurAccount = new Account("525020", 20000);
-echo $MoshiurAccount->getBalanch();
+$moshiurAccount = new Account("525020", 20000);
+echo $moshiurAccount->getBalanch();
 
-$MoshiurAccount->deposit(5000);
+$moshiurAccount->deposit(5000);
 echo PHP_EOL;
-echo $MoshiurAccount->getBalanch();
+echo $moshiurAccount->getBalanch();
+// অব্জেচত পাবলিক থাকা অবথায় এই টা ডাইরেক্ট কোড অ্যাক্সেস করতে পারত ।
+// $moshiurAccount->balanch = 10000;
 
-$MoshiurAccount->withdraw(7000);
+$moshiurAccount->withdraw(7000);
 echo PHP_EOL;
-echo $MoshiurAccount->getBalanch();
+echo $moshiurAccount->getBalanch();
 
 ?>
