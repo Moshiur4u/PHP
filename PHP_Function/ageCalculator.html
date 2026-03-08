@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>age Calculator</title>
+</head>
+<body>
+    <?php
+    function ageCalculator(birthDate){
+        $today = now DateTime();
+        $birth = now DateTime($birthDate);
+        $age = $today->diff($birthDate);
+        
+        return[
+        'years' =>$age->y,
+        'months'=>$age->m,
+        'date'=>$age->d,
+        'TotalDays'=>$age->day
+        ];
+       ageCalculator ="" 
+    }
+
+    ?>
+
+</body>
+</html>
