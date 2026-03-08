@@ -36,7 +36,7 @@ echo $moshiurAccount->getBalanch();
 $moshiurAccount->deposit(5000);
 echo PHP_EOL;
 echo $moshiurAccount->getBalanch();
-// অব্জেচত পাবলিক থাকা অবথায় এই টা ডাইরেক্ট কোড অ্যাক্সেস করতে পারত ।
+// অব্জেক্টকে পাবলিক থাকা অবস্থায় এই টা ডাইরেক্ট কোড অ্যাক্সেস করতে পারত ।
 // $moshiurAccount->balanch = 10000;
 
 $moshiurAccount->withdraw(7000);
