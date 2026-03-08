@@ -1,3 +1,3 @@
 <?php
-// Class Abastract
+// Class Abastract & Extend
 ?>
