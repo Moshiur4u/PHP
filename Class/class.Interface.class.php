@@ -52,4 +52,4 @@ class currentAccount implements Accounterface
 }
 $SavingAccountDetails = new SavingAccount("12345", 2000);
 echo $SavingAccountDetails->getBalance();
->>>>>>> 902f0753d1f69e7add9ecc5ad3e6361cb483f727
+
