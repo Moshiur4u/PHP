@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 <?php
 // Interface & Implement
 interface Accounterface
