@@ -24,7 +24,7 @@ Class Human implements canEat ,canFly, canSleep, canSwim {
     }
     function Swim()
     {
-       echo "Human can Swiming";
+       echo "Human can Swim.\n";
     }
     function Flay()
     {echo "human can not fly";
@@ -42,7 +42,7 @@ function eat()
 }
 function Swim()
 {
-    echo "Can't Swim";
+    echo "Bird Can't Swim";
 }
 
 }
