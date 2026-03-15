@@ -43,6 +43,8 @@ function generate(){
    echo "<h1>Invoice #$this->invoiceId</h1>";
    echo "$this->title";
    echo "ClintDetails";
+   echo "<ul>";
+   echo "Name";
 }
 
  }
@@ -50,3 +52,6 @@ function generate(){
 //  $invoice = new invoice();
 //  $invoice->title();
 //  $invoice->description();
+// $invoiceId = "2323";
+// $title = "Jon Do";
+// $description = taxRate($invoiceId);
