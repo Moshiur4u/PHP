@@ -1,0 +1,186 @@
+
+<h2 class="sr-only">PHP সম্পূর্ণ রেফারেন্স — ৮টি বিষয়ে ইন্টারেক্টিভ নোট কার্ড।</h2>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+.wrap{padding:1.25rem 1.5rem;font-family:'Hind Siliguri',sans-serif;}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem;}
+.tab{padding:7px 13px;border-radius:20px;font-size:12px;cursor:pointer;border:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);color:var(--color-text-secondary);transition:all .15s;}
+.tab.active{background:#4F46E5;color:#fff;border-color:#4F46E5;}
+.tab:hover:not(.active){background:var(--color-background-secondary);}
+.section{display:none;}
+.section.active{display:block;}
+.badge{display:inline-flex;align-items:center;gap:7px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:20px;padding:4px 13px;font-size:12px;color:var(--color-text-secondary);margin-bottom:10px;}
+.badge i{color:#4F46E5;font-size:15px;}
+.sec-title{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px;}
+.sec-desc{font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:1.25rem;}
+.def-card{background:var(--color-background-secondary);border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.25rem;border-left:3px solid #4F46E5;border-radius:0 10px 10px 0;}
+.def-card p{font-size:14px;color:var(--color-text-primary);line-height:1.75;}
+.def-card strong{color:#4F46E5;font-weight:500;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.25rem;}
+.grid1{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:1.25rem;}
+@media(max-width:480px){.grid2{grid-template-columns:1fr;}}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:12px;padding:1rem 1.1rem;border-top:2px solid #6366F1;}
+.card-title{font-size:13px;font-weight:500;color:#4F46E5;margin-bottom:4px;font-family:monospace;}
+.card-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.55;margin-bottom:8px;}
+.cb{background:#1E1B2E;border-radius:8px;padding:9px 11px;font-family:monospace;font-size:12px;line-height:1.75;color:#CDD6F4;overflow-x:auto;margin-bottom:0;}
+.kw{color:#89B4FA;}.str{color:#F38BA8;}.var{color:#CBA6F7;}.cm{color:#6C7086;}.num{color:#F9E2AF;}.fn{color:#A6E3A1;}.op{color:#89DCEB;}
+.rule-list{list-style:none;margin-bottom:1.25rem;}
+.rule-list li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--color-text-primary);padding:6px 0;border-bottom:0.5px solid var(--color-border-tertiary);line-height:1.6;}
+.rule-list li:last-child{border-bottom:none;}
+.rule-list li i{color:#4F46E5;font-size:15px;margin-top:2px;flex-shrink:0;}
+.chip-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:1.25rem;}
+.chip{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:6px;padding:5px 11px;font-size:12px;font-family:monospace;color:var(--color-text-primary);}
+.chip.good{background:#E1F5EE;color:#085041;border-color:#9FE1CB;}
+.chip.bad{background:#FCEBEB;color:#501313;border-color:#F7C1C1;}
+.note{background:#EEF2FF;border-radius:8px;padding:10px 13px;font-size:13px;color:#3730A3;line-height:1.65;margin-bottom:1.25rem;display:flex;gap:9px;align-items:flex-start;}
+.note i{font-size:16px;margin-top:1px;flex-shrink:0;}
+</style>
+
+<div class="wrap">
+<div class="tabs">
+  <div class="tab active" onclick="show(0)">Variable</div>
+  <div class="tab" onclick="show(1)">Function</div>
+  <div class="tab" onclick="show(2)">Constant</div>
+  <div class="tab" onclick="show(3)">Loop</div>
+  <div class="tab" onclick="show(4)">If / Else</div>
+  <div class="tab" onclick="show(5)">OOP</div>
+  <div class="tab" onclick="show(6)">Switch</div>
+  <div class="tab" onclick="show(7)">Ternary</div>
+</div>
+
+<!-- 0: Variable -->
+<div class="section active" id="s0">
+  <div class="badge"><i class="ti ti-variable" aria-hidden="true"></i>PHP Variable</div>
+  <div class="sec-title">Variable (ভেরিয়েবল)</div>
+  <div class="sec-desc">PHP-তে ভেরিয়েবল হলো ডেটা সংরক্ষণের পাত্র। সবসময় <code>$</code> চিহ্ন দিয়ে শুরু হয়।</div>
+  <div class="def-card"><p>ভেরিয়েবল হলো এমন একটি নামযুক্ত স্থান যেখানে ডেটা সাময়িকভাবে সংরক্ষণ করা হয়। PHP <strong>dynamically typed</strong> — আলাদা করে type ঘোষণা করতে হয় না।</p></div>
+  <div class="grid2">
+    <div class="card"><div class="card-title">String</div><div class="card-desc">টেক্সট ডেটা সংরক্ষণ করে।</div><div class="cb"><span class="var">$name</span> = <span class="str">"Rahim"</span>;<br><span class="kw">echo</span> <span class="var">$name</span>;</div></div>
+    <div class="card"><div class="card-title">Integer</div><div class="card-desc">পূর্ণসংখ্যা সংরক্ষণ করে।</div><div class="cb"><span class="var">$age</span> = <span class="num">20</span>;<br><span class="kw">echo</span> <span class="var">$age</span>;</div></div>
+    <div class="card"><div class="card-title">Float</div><div class="card-desc">দশমিক সংখ্যা সংরক্ষণ করে।</div><div class="cb"><span class="var">$price</span> = <span class="num">9.99</span>;<br><span class="kw">echo</span> <span class="var">$price</span>;</div></div>
+    <div class="card"><div class="card-title">Boolean</div><div class="card-desc">সত্য বা মিথ্যা মান ধরে।</div><div class="cb"><span class="var">$active</span> = <span class="kw">true</span>;<br><span class="var">$done</span> = <span class="kw">false</span>;</div></div>
+    <div class="card"><div class="card-title">NULL</div><div class="card-desc">কোনো মান নেই এটি বোঝায়।</div><div class="cb"><span class="var">$x</span> = <span class="kw">null</span>;</div></div>
+    <div class="card"><div class="card-title">Variable Variable</div><div class="card-desc">ভেরিয়েবলের নাম ডায়নামিকভাবে তৈরি করে।</div><div class="cb"><span class="var">$key</span> = <span class="str">"city"</span>;<br>$$<span class="var">key</span> = <span class="str">"Dhaka"</span>;</div></div>
+  </div>
+  <ul class="rule-list">
+    <li><i class="ti ti-check" aria-hidden="true"></i><span><code>$</code> দিয়ে শুরু, তারপর অক্ষর বা আন্ডারস্কোর। সংখ্যা দিয়ে শুরু করা যাবে না।</span></li>
+    <li><i class="ti ti-check" aria-hidden="true"></i><span>PHP case-sensitive — <code>$Name</code> ও <code>$name</code> আলাদা ভেরিয়েবল।</span></li>
+    <li><i class="ti ti-check" aria-hidden="true"></i><span>নামে শুধু অক্ষর, সংখ্যা ও আন্ডারস্কোর ব্যবহার করা যাবে।</span></li>
+  </ul>
+  <div class="chip-row">
+    <span class="chip good">✓ $userName</span><span class="chip good">✓ $user_name</span><span class="chip good">✓ $_total</span>
+    <span class="chip bad">✗ $1name</span><span class="chip bad">✗ $user-name</span><span class="chip bad">✗ $my name</span>
+  </div>
+</div>
+
+<!-- 1: Function -->
+<div class="section" id="s1">
+  <div class="badge"><i class="ti ti-code" aria-hidden="true"></i>PHP Function</div>
+  <div class="sec-title">Function (ফাংশন)</div>
+  <div class="sec-desc">ফাংশন হলো পুনর্ব্যবহারযোগ্য কোডের একটি ব্লক যা নির্দিষ্ট কাজ সম্পন্ন করে।</div>
+  <div class="def-card"><p>ফাংশন একবার লিখে বারবার ব্যবহার করা যায়। PHP-তে <strong>built-in</strong> ও <strong>user-defined</strong> দুই ধরনের ফাংশন আছে।</p></div>
+  <div class="grid1">
+    <div class="card"><div class="card-title">সাধারণ ফাংশন</div><div class="card-desc">parameter ছাড়া বা সহ ফাংশন তৈরি করা যায়।</div><div class="cb"><span class="kw">function</span> <span class="fn">greet</span>(<span class="var">$name</span>) {<br>&nbsp;&nbsp;<span class="kw">return</span> <span class="str">"হ্যালো, "</span> . <span class="var">$name</span>;<br>}<br><span class="kw">echo</span> <span class="fn">greet</span>(<span class="str">"Rahim"</span>); <span class="cm">// হ্যালো, Rahim</span></div></div>
+    <div class="card"><div class="card-title">Default Parameter</div><div class="card-desc">প্যারামিটারে ডিফল্ট মান দেওয়া যায়।</div><div class="cb"><span class="kw">function</span> <span class="fn">greet</span>(<span class="var">$name</span> = <span class="str">"বন্ধু"</span>) {<br>&nbsp;&nbsp;<span class="kw">return</span> <span class="str">"হ্যালো, "</span> . <span class="var">$name</span>;<br>}<br><span class="kw">echo</span> <span class="fn">greet</span>(); <span class="cm">// হ্যালো, বন্ধু</span></div></div>
+    <div class="card"><div class="card-title">Arrow Function (PHP 7.4+)</div><div class="card-desc">সংক্ষিপ্তভাবে anonymous ফাংশন লেখা যায়।</div><div class="cb"><span class="var">$double</span> = <span class="kw">fn</span>(<span class="var">$n</span>) <span class="kw">=></span> <span class="var">$n</span> * <span class="num">2</span>;<br><span class="kw">echo</span> <span class="var">$double</span>(<span class="num">5</span>); <span class="cm">// 10</span></div></div>
+    <div class="card"><div class="card-title">Type Declaration (PHP 7+)</div><div class="card-desc">Parameter ও return type নির্দিষ্ট করা যায়।</div><div class="cb"><span class="kw">function</span> <span class="fn">add</span>(<span class="kw">int</span> <span class="var">$a</span>, <span class="kw">int</span> <span class="var">$b</span>): <span class="kw">int</span> {<br>&nbsp;&nbsp;<span class="kw">return</span> <span class="var">$a</span> + <span class="var">$b</span>;<br>}<br><span class="kw">echo</span> <span class="fn">add</span>(<span class="num">3</span>, <span class="num">4</span>); <span class="cm">// 7</span></div></div>
+  </div>
+  <div class="note"><i class="ti ti-bulb" aria-hidden="true"></i><span><strong>মনে রাখুন:</strong> PHP ফাংশন নাম case-insensitive, তবে ভেরিয়েবল নাম case-sensitive।</span></div>
+</div>
+
+<!-- 2: Constant -->
+<div class="section" id="s2">
+  <div class="badge"><i class="ti ti-lock" aria-hidden="true"></i>PHP Constant</div>
+  <div class="sec-title">Constant (ধ্রুবক)</div>
+  <div class="sec-desc">Constant হলো এমন একটি মান যা একবার নির্ধারণ করলে পরিবর্তন করা যায় না।</div>
+  <div class="def-card"><p>ভেরিয়েবলের মতো কিন্তু <strong>অপরিবর্তনীয়</strong>। সাধারণত নাম সব বড় হাতে লেখা হয়। <code>$</code> চিহ্ন ব্যবহার করতে হয় না।</p></div>
+  <div class="grid2">
+    <div class="card"><div class="card-title">define() দিয়ে</div><div class="card-desc">যেকোনো জায়গায় constant তৈরি করা যায়।</div><div class="cb"><span class="fn">define</span>(<span class="str">"PI"</span>, <span class="num">3.1416</span>);<br><span class="kw">echo</span> PI; <span class="cm">// 3.1416</span></div></div>
+    <div class="card"><div class="card-title">const কীওয়ার্ড দিয়ে</div><div class="card-desc">Class-এর ভেতরে বা global scope-এ ব্যবহার হয়।</div><div class="cb"><span class="kw">const</span> SITE_NAME = <span class="str">"MyApp"</span>;<br><span class="kw">echo</span> SITE_NAME;</div></div>
+    <div class="card"><div class="card-title">Magic Constants</div><div class="card-desc">PHP-এর নিজস্ব built-in constant।</div><div class="cb"><span class="kw">echo</span> __LINE__; <span class="cm">// লাইন নম্বর</span><br><span class="kw">echo</span> __FILE__; <span class="cm">// ফাইল পাথ</span><br><span class="kw">echo</span> __DIR__;  <span class="cm">// ডিরেক্টরি</span></div></div>
+    <div class="card"><div class="card-title">Class Constant</div><div class="card-desc">Class-এর ভেতরে constant তৈরি করা যায়।</div><div class="cb"><span class="kw">class</span> <span class="fn">Math</span> {<br>&nbsp;&nbsp;<span class="kw">const</span> PI = <span class="num">3.14</span>;<br>}<br><span class="kw">echo</span> Math::PI;</div></div>
+  </div>
+  <div class="chip-row">
+    <span class="chip good">✓ define() — runtime-এ তৈরি করা যায়</span>
+    <span class="chip good">✓ const — compile time-এ তৈরি হয়</span>
+    <span class="chip bad">✗ constant পরিবর্তন করা যায় না</span>
+  </div>
+</div>
+
+<!-- 3: Loop -->
+<div class="section" id="s3">
+  <div class="badge"><i class="ti ti-refresh" aria-hidden="true"></i>PHP Loop</div>
+  <div class="sec-title">Loop (লুপ)</div>
+  <div class="sec-desc">একই কাজ বারবার করার জন্য লুপ ব্যবহার হয়। PHP-তে ৪ ধরনের লুপ আছে।</div>
+  <div class="grid2">
+    <div class="card"><div class="card-title">for loop</div><div class="card-desc">নির্দিষ্ট সংখ্যকবার চালাতে হলে।</div><div class="cb"><span class="kw">for</span>(<span class="var">$i</span>=<span class="num">1</span>; <span class="var">$i</span>&lt;=<span class="num">5</span>; <span class="var">$i</span>++) {<br>&nbsp;&nbsp;<span class="kw">echo</span> <span class="var">$i</span> . <span class="str">" "</span>;<br>}<br><span class="cm">// 1 2 3 4 5</span></div></div>
+    <div class="card"><div class="card-title">while loop</div><div class="card-desc">শর্ত সত্য থাকলে চলতে থাকে।</div><div class="cb"><span class="var">$i</span> = <span class="num">1</span>;<br><span class="kw">while</span>(<span class="var">$i</span> &lt;= <span class="num">5</span>) {<br>&nbsp;&nbsp;<span class="kw">echo</span> <span class="var">$i</span>++;<br>}</div></div>
+    <div class="card"><div class="card-title">do...while loop</div><div class="card-desc">অন্তত একবার চলবেই, তারপর শর্ত চেক করে।</div><div class="cb"><span class="var">$i</span> = <span class="num">1</span>;<br><span class="kw">do</span> {<br>&nbsp;&nbsp;<span class="kw">echo</span> <span class="var">$i</span>++;<br>} <span class="kw">while</span>(<span class="var">$i</span> &lt;= <span class="num">5</span>);</div></div>
+    <div class="card"><div class="card-title">foreach loop</div><div class="card-desc">অ্যারের প্রতিটি উপাদার নিয়ে কাজ করে।</div><div class="cb"><span class="var">$names</span> = [<span class="str">"Rahim"</span>,<span class="str">"Karim"</span>];<br><span class="kw">foreach</span>(<span class="var">$names</span> <span class="kw">as</span> <span class="var">$n</span>) {<br>&nbsp;&nbsp;<span class="kw">echo</span> <span class="var">$n</span>;<br>}</div></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="card-title">break</div><div class="card-desc">লুপ বন্ধ করে বের হয়ে যায়।</div><div class="cb"><span class="kw">for</span>(<span class="var">$i</span>=<span class="num">1</span>;<span class="var">$i</span>&lt;=<span class="num">10</span>;<span class="var">$i</span>++){<br>&nbsp;&nbsp;<span class="kw">if</span>(<span class="var">$i</span>==<span class="num">5</span>) <span class="kw">break</span>;<br>&nbsp;&nbsp;<span class="kw">echo</span> <span class="var">$i</span>;<br>} <span class="cm">// 1234</span></div></div>
+    <div class="card"><div class="card-title">continue</div><div class="card-desc">বর্তমান iteration বাদ দিয়ে পরেরটায় যায়।</div><div class="cb"><span class="kw">for</span>(<span class="var">$i</span>=<span class="num">1</span>;<span class="var">$i</span>&lt;=<span class="num">5</span>;<span class="var">$i</span>++){<br>&nbsp;&nbsp;<span class="kw">if</span>(<span class="var">$i</span>==<span class="num">3</span>) <span class="kw">continue</span>;<br>&nbsp;&nbsp;<span class="kw">echo</span> <span class="var">$i</span>;<br>} <span class="cm">// 1245</span></div></div>
+  </div>
+</div>
+
+<!-- 4: If Else -->
+<div class="section" id="s4">
+  <div class="badge"><i class="ti ti-git-branch" aria-hidden="true"></i>If / Else</div>
+  <div class="sec-title">If Else & Nested If Else</div>
+  <div class="sec-desc">শর্ত অনুযায়ী ভিন্ন কোড চালানোর জন্য if-else ব্যবহার হয়।</div>
+  <div class="grid1">
+    <div class="card"><div class="card-title">if / else if / else</div><div class="card-desc">একাধিক শর্ত পরীক্ষা করে সিদ্ধান্ত নেয়।</div><div class="cb"><span class="var">$marks</span> = <span class="num">75</span>;<br><span class="kw">if</span>(<span class="var">$marks</span> >= <span class="num">80</span>) {<br>&nbsp;&nbsp;<span class="kw">echo</span> <span class="str">"A+"</span>;<br>} <span class="kw">elseif</span>(<span class="var">$marks</span> >= <span class="num">70</span>) {<br>&nbsp;&nbsp;<span class="kw">echo</span> <span class="str">"A"</span>;  <span class="cm">// এটি প্রিন্ট হবে</span><br>} <span class="kw">else</span> {<br>&nbsp;&nbsp;<span class="kw">echo</span> <span class="str">"B"</span>;<br>}</div></div>
+    <div class="card"><div class="card-title">Nested If Else</div><div class="card-desc">if-এর ভেতরে আরেকটি if — জটিল শর্তের জন্য।</div><div class="cb"><span class="var">$age</span> = <span class="num">20</span>; <span class="var">$citizen</span> = <span class="kw">true</span>;<br><span class="kw">if</span>(<span class="var">$age</span> >= <span class="num">18</span>) {<br>&nbsp;&nbsp;<span class="kw">if</span>(<span class="var">$citizen</span>) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">echo</span> <span class="str">"ভোট দিতে পারবেন"</span>;<br>&nbsp;&nbsp;} <span class="kw">else</span> {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">echo</span> <span class="str">"নাগরিক নন"</span>;<br>&nbsp;&nbsp;}<br>} <span class="kw">else</span> {<br>&nbsp;&nbsp;<span class="kw">echo</span> <span class="str">"বয়স কম"</span>;<br>}</div></div>
+    <div class="card"><div class="card-title">Logical Operators দিয়ে</div><div class="card-desc"><code>&&</code> (এবং), <code>||</code> (অথবা), <code>!</code> (না) ব্যবহার করে শর্ত যুক্ত করা যায়।</div><div class="cb"><span class="kw">if</span>(<span class="var">$age</span> >= <span class="num">18</span> <span class="op">&&</span> <span class="var">$citizen</span> == <span class="kw">true</span>) {<br>&nbsp;&nbsp;<span class="kw">echo</span> <span class="str">"যোগ্য"</span>;<br>}</div></div>
+  </div>
+</div>
+
+<!-- 5: OOP -->
+<div class="section" id="s5">
+  <div class="badge"><i class="ti ti-box" aria-hidden="true"></i>PHP OOP</div>
+  <div class="sec-title">Object Oriented Programming</div>
+  <div class="sec-desc">OOP হলো class ও object ব্যবহার করে কোড সংগঠিত করার পদ্ধতি।</div>
+  <div class="grid1">
+    <div class="card"><div class="card-title">Class ও Object</div><div class="card-desc">Class হলো blueprint, Object হলো তার বাস্তব রূপ।</div><div class="cb"><span class="kw">class</span> <span class="fn">Student</span> {<br>&nbsp;&nbsp;<span class="kw">public</span> <span class="var">$name</span>;<br>&nbsp;&nbsp;<span class="kw">public</span> <span class="var">$age</span>;<br>&nbsp;&nbsp;<span class="kw">function</span> <span class="fn">info</span>() {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="var">$this</span>-><span class="var">name</span> . <span class="str">", "</span> . <span class="var">$this</span>-><span class="var">age</span>;<br>&nbsp;&nbsp;}<br>}<br><span class="var">$s</span> = <span class="kw">new</span> <span class="fn">Student</span>();<br><span class="var">$s</span>-><span class="var">name</span> = <span class="str">"Rahim"</span>;<br><span class="kw">echo</span> <span class="var">$s</span>-><span class="fn">info</span>();</div></div>
+    <div class="card"><div class="card-title">Constructor ও Destructor</div><div class="card-desc">Object তৈরি ও মুছে যাওয়ার সময় স্বয়ংক্রিয়ভাবে চলে।</div><div class="cb"><span class="kw">class</span> <span class="fn">Car</span> {<br>&nbsp;&nbsp;<span class="kw">function</span> <span class="fn">__construct</span>(<span class="var">$model</span>) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="var">$this</span>-><span class="var">model</span> = <span class="var">$model</span>;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;<span class="kw">function</span> <span class="fn">__destruct</span>() {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">echo</span> <span class="str">"শেষ!"</span>;<br>&nbsp;&nbsp;}<br>}<br><span class="var">$c</span> = <span class="kw">new</span> <span class="fn">Car</span>(<span class="str">"Toyota"</span>);</div></div>
+    <div class="card"><div class="card-title">Inheritance (উত্তরাধিকার)</div><div class="card-desc">Parent class-এর বৈশিষ্ট্য child class পায়।</div><div class="cb"><span class="kw">class</span> <span class="fn">Animal</span> {<br>&nbsp;&nbsp;<span class="kw">function</span> <span class="fn">speak</span>() { <span class="kw">echo</span> <span class="str">"..."</span>; }<br>}<br><span class="kw">class</span> <span class="fn">Dog</span> <span class="kw">extends</span> <span class="fn">Animal</span> {<br>&nbsp;&nbsp;<span class="kw">function</span> <span class="fn">speak</span>() { <span class="kw">echo</span> <span class="str">"ঘেউ!"</span>; }<br>}<br><span class="var">$d</span> = <span class="kw">new</span> <span class="fn">Dog</span>();<br><span class="var">$d</span>-><span class="fn">speak</span>();</div></div>
+    <div class="card"><div class="card-title">Access Modifier</div><div class="card-desc">property বা method-এর প্রবেশাধিকার নিয়ন্ত্রণ করে।</div><div class="cb"><span class="kw">class</span> <span class="fn">Person</span> {<br>&nbsp;&nbsp;<span class="kw">public</span>    <span class="var">$name</span>;  <span class="cm">// সবাই দেখতে পাবে</span><br>&nbsp;&nbsp;<span class="kw">protected</span> <span class="var">$age</span>;   <span class="cm">// child-ও দেখবে</span><br>&nbsp;&nbsp;<span class="kw">private</span>   <span class="var">$pass</span>;  <span class="cm">// শুধু এই class</span><br>}</div></div>
+  </div>
+</div>
+
+<!-- 6: Switch -->
+<div class="section" id="s6">
+  <div class="badge"><i class="ti ti-switch" aria-hidden="true"></i>Switch Case</div>
+  <div class="sec-title">Switch Case Statement</div>
+  <div class="sec-desc">একটি ভেরিয়েবলের একাধিক সম্ভাব্য মান পরীক্ষা করতে switch ব্যবহার হয়।</div>
+  <div class="def-card"><p>অনেক <strong>elseif</strong> লেখার পরিবর্তে switch ব্যবহার করলে কোড পরিষ্কার থাকে। প্রতিটি case-এ <code>break</code> না দিলে পরের case-এও চলতে থাকে।</p></div>
+  <div class="grid1">
+    <div class="card"><div class="card-title">সাধারণ switch</div><div class="card-desc">একটি মানের বিপরীতে একাধিক case পরীক্ষা করে।</div><div class="cb"><span class="var">$day</span> = <span class="str">"শুক্র"</span>;<br><span class="kw">switch</span>(<span class="var">$day</span>) {<br>&nbsp;&nbsp;<span class="kw">case</span> <span class="str">"শুক্র"</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">echo</span> <span class="str">"ছুটির দিন"</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">break</span>;<br>&nbsp;&nbsp;<span class="kw">case</span> <span class="str">"শনি"</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">echo</span> <span class="str">"অর্ধদিন"</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">break</span>;<br>&nbsp;&nbsp;<span class="kw">default</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">echo</span> <span class="str">"কাজের দিন"</span>;<br>}</div></div>
+    <div class="card"><div class="card-title">একাধিক case একসাথে</div><div class="card-desc">একই কাজের জন্য একাধিক case একত্রিত করা যায়।</div><div class="cb"><span class="var">$grade</span> = <span class="str">"B"</span>;<br><span class="kw">switch</span>(<span class="var">$grade</span>) {<br>&nbsp;&nbsp;<span class="kw">case</span> <span class="str">"A"</span>:<br>&nbsp;&nbsp;<span class="kw">case</span> <span class="str">"A+"</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">echo</span> <span class="str">"চমৎকার!"</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">break</span>;<br>&nbsp;&nbsp;<span class="kw">case</span> <span class="str">"B"</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">echo</span> <span class="str">"ভালো!"</span>; <span class="cm">// এটি</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">break</span>;<br>}</div></div>
+  </div>
+  <div class="note"><i class="ti ti-alert-triangle" aria-hidden="true"></i><span><strong>সতর্কতা:</strong> <code>break</code> না দিলে পরের case-ও execute হবে — এটিকে "fall-through" বলে।</span></div>
+</div>
+
+<!-- 7: Ternary -->
+<div class="section" id="s7">
+  <div class="badge"><i class="ti ti-question-mark" aria-hidden="true"></i>Ternary Operators</div>
+  <div class="sec-title">Ternary ও Nested Ternary Operators</div>
+  <div class="sec-desc">if-else-এর সংক্ষিপ্ত রূপ। এক লাইনে শর্তীয় মান নির্ধারণ করে।</div>
+  <div class="def-card"><p>Ternary operator হলো <strong>শর্ত ? সত্য_হলে : মিথ্যা_হলে</strong> — তিনটি অংশ থাকে বলে এর নাম ternary।</p></div>
+  <div class="grid1">
+    <div class="card"><div class="card-title">সাধারণ Ternary</div><div class="card-desc">শর্ত অনুযায়ী দুটি মানের একটি বেছে নেয়।</div><div class="cb"><span class="var">$age</span> = <span class="num">20</span>;<br><span class="var">$status</span> = (<span class="var">$age</span> >= <span class="num">18</span>) ? <span class="str">"প্রাপ্তবয়স্ক"</span> : <span class="str">"অপ্রাপ্তবয়স্ক"</span>;<br><span class="kw">echo</span> <span class="var">$status</span>; <span class="cm">// প্রাপ্তবয়স্ক</span></div></div>
+    <div class="card"><div class="card-title">Null Coalescing (??) — PHP 7+</div><div class="card-desc">মান null বা অনির্ধারিত হলে ডিফল্ট মান দেয়।</div><div class="cb"><span class="var">$name</span> = <span class="var">$_GET</span>[<span class="str">"name"</span>] ?? <span class="str">"অতিথি"</span>;<br><span class="kw">echo</span> <span class="var">$name</span>; <span class="cm">// name না থাকলে: অতিথি</span></div></div>
+    <div class="card"><div class="card-title">Nested Ternary</div><div class="card-desc">Ternary-এর ভেতরে আরেকটি ternary — একাধিক শর্তের জন্য।</div><div class="cb"><span class="var">$marks</span> = <span class="num">75</span>;<br><span class="var">$grade</span> = (<span class="var">$marks</span> >= <span class="num">80</span>) ? <span class="str">"A+"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ((<span class="var">$marks</span> >= <span class="num">70</span>) ? <span class="str">"A"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ((<span class="var">$marks</span> >= <span class="num">60</span>) ? <span class="str">"B"</span> : <span class="str">"C"</span>));<br><span class="kw">echo</span> <span class="var">$grade</span>; <span class="cm">// A</span></div></div>
+    <div class="card"><div class="card-title">Elvis Operator (?:)</div><div class="card-desc">মান সত্য হলে নিজেই ফেরত দেয়, না হলে বিকল্প মান।</div><div class="cb"><span class="var">$name</span> = <span class="str">""</span>;<br><span class="var">$display</span> = <span class="var">$name</span> ?: <span class="str">"নাম নেই"</span>;<br><span class="kw">echo</span> <span class="var">$display</span>; <span class="cm">// নাম নেই</span></div></div>
+  </div>
+  <div class="note"><i class="ti ti-bulb" aria-hidden="true"></i><span><strong>পরামর্শ:</strong> Nested ternary বেশি জটিল হলে if-else ব্যবহার করা ভালো — কোড পড়তে সহজ হয়।</span></div>
+</div>
+
+</div>
+<script>
+function show(i){
+  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.section').forEach((s,j)=>s.classList.toggle('active',i===j));
+}
+</script>

@@ -1,0 +1,173 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Hind Siliguri',sans-serif;}
+.page{padding:2rem 1.5rem;max-width:680px;}
+.title-badge{display:inline-flex;align-items:center;gap:8px;background:#0F6E56;color:#fff;font-size:13px;font-weight:500;padding:5px 14px;border-radius:20px;margin-bottom:1.5rem;letter-spacing:0.3px;}
+.title-badge .dot{width:7px;height:7px;border-radius:50%;background:#9FE1CB;}
+h1{font-size:22px;font-weight:600;color:var(--color-text-primary);margin-bottom:6px;line-height:1.3;}
+.subtitle{font-size:14px;color:var(--color-text-secondary);margin-bottom:2rem;line-height:1.6;}
+.def-card{background:var(--color-background-secondary);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:1.5rem;border-left:3px solid #1D9E75;}
+.def-card p{font-size:15px;color:var(--color-text-primary);line-height:1.75;}
+.def-card strong{font-weight:600;color:#0F6E56;}
+.section-label{font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+.section-label::after{content:'';flex:1;height:0.5px;background:var(--color-border-tertiary);}
+.type-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:1.5rem;}
+.type-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:10px;padding:1rem 1.1rem;}
+.type-icon{font-size:20px;color:#1D9E75;margin-bottom:8px;}
+.type-title{font-size:14px;font-weight:600;color:var(--color-text-primary);margin-bottom:4px;}
+.type-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.6;}
+.code-block{background:#1E1B2E;border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1.5rem;overflow-x:auto;}
+.code-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.code-label{font-size:12px;color:#9FE1CB;font-family:'Fira Code',monospace;font-weight:500;}
+.code-lang{font-size:11px;color:#7C6FA0;font-family:'Fira Code',monospace;}
+.code-dots{display:flex;gap:5px;}
+.code-dots span{width:8px;height:8px;border-radius:50%;}
+.dot-r{background:#FF5F57;}.dot-y{background:#FEBC2E;}.dot-g{background:#28C840;}
+pre{font-family:'Fira Code',monospace;font-size:13px;line-height:1.8;color:#CDD6F4;}
+.kw{color:#89B4FA;} .str{color:#F38BA8;} .var{color:#CBA6F7;} .cm{color:#6C7086;} .num{color:#F9E2AF;} .fn{color:#A6E3A1;}
+.visual-box{background:var(--color-background-secondary);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:1.5rem;}
+.matrix{display:inline-grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px;}
+.cell{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:6px;padding:6px 10px;font-size:13px;text-align:center;font-family:'Fira Code',monospace;color:var(--color-text-primary);}
+.cell.header{background:#E1F5EE;color:#085041;font-weight:600;font-size:12px;}
+.row-label{display:flex;align-items:center;gap:10px;margin-top:8px;}
+.row-tag{background:#E1F5EE;color:#085041;font-size:11px;padding:3px 8px;border-radius:4px;font-family:'Fira Code',monospace;}
+.tip-card{background:#E1F5EE;border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.5rem;display:flex;gap:12px;align-items:flex-start;}
+.tip-card i{color:#0F6E56;font-size:20px;margin-top:2px;flex-shrink:0;}
+.tip-card p{font-size:14px;color:#085041;line-height:1.65;}
+.tip-card strong{font-weight:600;}
+.use-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.use-chip{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:10px 12px;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--color-text-primary);}
+.use-chip i{color:#1D9E75;font-size:17px;}
+</style>
+<div class="page">
+<div class="title-badge"><span class="dot"></span>PHP ধারণা</div>
+<h1>Multidimensional Arrays</h1>
+<p class="subtitle">অ্যারের ভেতরে অ্যারে — জটিল ডেটা সংগঠিতভাবে সংরক্ষণের পদ্ধতি</p>
+
+<div class="def-card">
+  <p>Multidimensional Array হলো এমন একটি অ্যারে যার প্রতিটি উপাদান নিজেই আরেকটি অ্যারে। এটি <strong>অ্যারের ভেতরে অ্যারে (Array of Arrays)</strong> — যেখানে ডেটাকে সারি ও কলামের মতো <strong>টেবিল বা ম্যাট্রিক্স আকারে</strong> সংরক্ষণ করা যায়।</p>
+</div>
+
+<div class="section-label">ধরন</div>
+<div class="type-grid">
+  <div class="type-card">
+    <div class="type-icon"><i class="ti ti-layout-grid" aria-hidden="true"></i></div>
+    <div class="type-title">2D Array</div>
+    <div class="type-desc">অ্যারের ভেতরে একটি অ্যারে। সারি ও কলামে ডেটা রাখা যায়।</div>
+  </div>
+  <div class="type-card">
+    <div class="type-icon"><i class="ti ti-cube" aria-hidden="true"></i></div>
+    <div class="type-title">3D Array</div>
+    <div class="type-desc">অ্যারের ভেতরে অ্যারের ভেতরে আরও অ্যারে। ত্রিমাত্রিক ডেটা কাঠামো।</div>
+  </div>
+  <div class="type-card">
+    <div class="type-icon"><i class="ti ti-address-book" aria-hidden="true"></i></div>
+    <div class="type-title">Mixed Array</div>
+    <div class="type-desc">Numeric ও Associative উভয় ধরনের কী একসাথে ব্যবহার করা যায়।</div>
+  </div>
+</div>
+
+<div class="section-label">2D Array — সংখ্যাসূচক</div>
+<div class="code-block">
+  <div class="code-header">
+    <div class="code-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+    <span class="code-label">Numeric 2D</span>
+    <span class="code-lang">PHP</span>
+  </div>
+<pre><span class="var">$matrix</span> = [
+    [<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>],
+    [<span class="num">4</span>, <span class="num">5</span>, <span class="num">6</span>],
+    [<span class="num">7</span>, <span class="num">8</span>, <span class="num">9</span>]
+];
+
+<span class="cm">// অ্যাক্সেস: [সারি][কলাম]</span>
+<span class="kw">echo</span> <span class="var">$matrix</span>[<span class="num">0</span>][<span class="num">1</span>]; <span class="cm">// 2</span>
+<span class="kw">echo</span> <span class="var">$matrix</span>[<span class="num">2</span>][<span class="num">0</span>]; <span class="cm">// 7</span></pre>
+</div>
+
+<div class="section-label">ভিজ্যুয়াল — ম্যাট্রিক্স গঠন</div>
+<div class="visual-box">
+  <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:8px;">$matrix এর গঠন:</div>
+  <div style="display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:center;">
+    <div style="font-size:12px;color:var(--color-text-secondary);font-family:'Fira Code',monospace;">
+      <div style="padding:6px 0;">[0]</div>
+      <div style="padding:6px 0;">[1]</div>
+      <div style="padding:6px 0;">[2]</div>
+    </div>
+    <div>
+      <div style="display:grid;grid-template-columns:repeat(3,60px);gap:5px;margin-bottom:5px;">
+        <div class="cell">1</div><div class="cell">2</div><div class="cell">3</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,60px);gap:5px;margin-bottom:5px;">
+        <div class="cell">4</div><div class="cell">5</div><div class="cell">6</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,60px);gap:5px;">
+        <div class="cell">7</div><div class="cell">8</div><div class="cell">9</div>
+      </div>
+    </div>
+  </div>
+  <div style="font-size:12px;color:var(--color-text-secondary);margin-top:10px;">
+    <span style="background:#E1F5EE;color:#085041;padding:3px 8px;border-radius:4px;font-family:'Fira Code',monospace;">$matrix[1][2]</span>
+    <span style="margin-left:8px;">→ সারি ১, কলাম ২ = <strong style="color:var(--color-text-primary);">6</strong></span>
+  </div>
+</div>
+
+<div class="section-label">Associative Multidimensional Array</div>
+<div class="code-block">
+  <div class="code-header">
+    <div class="code-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+    <span class="code-label">Associative 2D</span>
+    <span class="code-lang">PHP</span>
+  </div>
+<pre><span class="var">$students</span> = [
+    [<span class="str">"name"</span> <span class="kw">=></span> <span class="str">"Rahim"</span>,  <span class="str">"age"</span> <span class="kw">=></span> <span class="num">20</span>, <span class="str">"city"</span> <span class="kw">=></span> <span class="str">"Dhaka"</span>],
+    [<span class="str">"name"</span> <span class="kw">=></span> <span class="str">"Karim"</span>,  <span class="str">"age"</span> <span class="kw">=></span> <span class="num">22</span>, <span class="str">"city"</span> <span class="kw">=></span> <span class="str">"Sylhet"</span>],
+    [<span class="str">"name"</span> <span class="kw">=></span> <span class="str">"Fatema"</span>, <span class="str">"age"</span> <span class="kw">=></span> <span class="num">21</span>, <span class="str">"city"</span> <span class="kw">=></span> <span class="str">"Chittagong"</span>],
+];
+
+<span class="cm">// অ্যাক্সেস</span>
+<span class="kw">echo</span> <span class="var">$students</span>[<span class="num">0</span>][<span class="str">"name"</span>]; <span class="cm">// Rahim</span>
+<span class="kw">echo</span> <span class="var">$students</span>[<span class="num">2</span>][<span class="str">"city"</span>]; <span class="cm">// Chittagong</span>
+
+<span class="cm">// foreach দিয়ে সব ডেটা দেখানো</span>
+<span class="kw">foreach</span> (<span class="var">$students</span> <span class="kw">as</span> <span class="var">$student</span>) {
+    <span class="kw">echo</span> <span class="var">$student</span>[<span class="str">"name"</span>] . <span class="str">" - "</span> . <span class="var">$student</span>[<span class="str">"city"</span>] . <span class="str">"\n"</span>;
+}</pre>
+</div>
+
+<div class="section-label">3D Array উদাহরণ</div>
+<div class="code-block">
+  <div class="code-header">
+    <div class="code-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+    <span class="code-label">3D Array</span>
+    <span class="code-lang">PHP</span>
+  </div>
+<pre><span class="var">$school</span> = [
+    <span class="str">"class_1"</span> <span class="kw">=></span> [
+        <span class="str">"section_A"</span> <span class="kw">=></span> [<span class="str">"Rahim"</span>, <span class="str">"Karim"</span>],
+        <span class="str">"section_B"</span> <span class="kw">=></span> [<span class="str">"Fatema"</span>, <span class="str">"Nila"</span>],
+    ],
+];
+
+<span class="cm">// অ্যাক্সেস</span>
+<span class="kw">echo</span> <span class="var">$school</span>[<span class="str">"class_1"</span>][<span class="str">"section_A"</span>][<span class="num">0</span>];
+<span class="cm">// Output: Rahim</span></pre>
+</div>
+
+<div class="tip-card">
+  <i class="ti ti-bulb" aria-hidden="true"></i>
+  <p><strong>মনে রাখুন:</strong> যত গভীরে যাবেন, তত বেশি <code>[]</code> ব্র্যাকেট লাগবে। <code>$arr[স্তর১][স্তর২][স্তর৩]</code> — প্রতিটি ব্র্যাকেট একটি স্তর গভীরে যায়।</p>
+</div>
+
+<div class="section-label">ব্যবহারিক ক্ষেত্র</div>
+<div class="use-grid">
+  <div class="use-chip"><i class="ti ti-table" aria-hidden="true"></i> Database টেবিল</div>
+  <div class="use-chip"><i class="ti ti-users" aria-hidden="true"></i> ছাত্রের তালিকা</div>
+  <div class="use-chip"><i class="ti ti-building-store" aria-hidden="true"></i> পণ্যের ক্যাটালগ</div>
+  <div class="use-chip"><i class="ti ti-map" aria-hidden="true"></i> JSON ডেটা</div>
+  <div class="use-chip"><i class="ti ti-chart-bar" aria-hidden="true"></i> রিপোর্ট ডেটা</div>
+  <div class="use-chip"><i class="ti ti-sitemap" aria-hidden="true"></i> মেনু স্ট্রাকচার</div>
+</div>
+</div>

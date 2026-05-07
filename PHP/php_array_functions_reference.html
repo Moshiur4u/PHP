@@ -1,0 +1,416 @@
+
+<h2 class="sr-only">PHP Array Functions — সম্পূর্ণ রেফারেন্স গাইড। ৮টি বিভাগে ভাগ করা হয়েছে।</h2>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Hind Siliguri',sans-serif;}
+.wrap{padding:1.5rem;}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem;}
+.tab{padding:7px 14px;border-radius:20px;font-size:12px;cursor:pointer;border:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);color:var(--color-text-secondary);transition:all .15s;}
+.tab.active{background:#0F6E56;color:#fff;border-color:#0F6E56;}
+.tab:hover:not(.active){background:var(--color-background-secondary);}
+.section{display:none;}
+.section.active{display:block;}
+.sec-header{margin-bottom:1.25rem;}
+.sec-badge{display:inline-flex;align-items:center;gap:8px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:20px;padding:5px 14px;font-size:12px;color:var(--color-text-secondary);margin-bottom:10px;}
+.sec-badge i{color:#0F6E56;font-size:16px;}
+.sec-title{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px;}
+.sec-desc{font-size:13px;color:var(--color-text-secondary);line-height:1.6;}
+.fn-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.25rem;}
+@media(max-width:480px){.fn-grid{grid-template-columns:1fr;}}
+.fn-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:12px;padding:1rem 1.1rem;border-top:2px solid #1D9E75;}
+.fn-name{font-family:monospace;font-size:13px;font-weight:500;color:#0F6E56;margin-bottom:4px;}
+.fn-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.55;margin-bottom:8px;}
+.fn-ex{background:#1E1B2E;border-radius:7px;padding:8px 10px;font-family:monospace;font-size:11.5px;line-height:1.7;color:#CDD6F4;overflow-x:auto;}
+.kw{color:#89B4FA;}.str{color:#F38BA8;}.var{color:#CBA6F7;}.cm{color:#6C7086;}.num{color:#F9E2AF;}.fn-c{color:#A6E3A1;}
+.divider{height:0.5px;background:var(--color-border-tertiary);margin:1.25rem 0;}
+</style>
+
+<div class="wrap">
+<div class="tabs">
+  <div class="tab active" onclick="show(0)">তৈরি ও পরিবর্তন</div>
+  <div class="tab" onclick="show(1)">তথ্য</div>
+  <div class="tab" onclick="show(2)">রূপান্তর</div>
+  <div class="tab" onclick="show(3)">সাজানো</div>
+  <div class="tab" onclick="show(4)">ইটারেশন</div>
+  <div class="tab" onclick="show(5)">মাল্টিডাইমেনশনাল</div>
+  <div class="tab" onclick="show(6)">গণিত</div>
+  <div class="tab" onclick="show(7)">ইউটিলিটি</div>
+</div>
+
+<div class="section active" id="s0">
+  <div class="sec-header">
+    <div class="sec-badge"><i class="ti ti-plus" aria-hidden="true"></i> Creation & Manipulation</div>
+    <div class="sec-title">Array Creation and Manipulation Functions</div>
+    <div class="sec-desc">অ্যারে তৈরি করা, উপাদান যোগ বা বাদ দেওয়ার ফাংশন।</div>
+  </div>
+  <div class="fn-grid">
+    <div class="fn-card">
+      <div class="fn-name">array()</div>
+      <div class="fn-desc">নতুন অ্যারে তৈরি করে।</div>
+      <div class="fn-ex"><span class="var">$a</span> = <span class="fn-c">array</span>(<span class="num">1</span>,<span class="num">2</span>,<span class="num">3</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_push()</div>
+      <div class="fn-desc">অ্যারের শেষে উপাদান যোগ করে।</div>
+      <div class="fn-ex"><span class="fn-c">array_push</span>(<span class="var">$a</span>, <span class="num">4</span>, <span class="num">5</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_pop()</div>
+      <div class="fn-desc">অ্যারের শেষ উপাদান সরিয়ে ফেরত দেয়।</div>
+      <div class="fn-ex"><span class="var">$last</span> = <span class="fn-c">array_pop</span>(<span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_shift()</div>
+      <div class="fn-desc">অ্যারের প্রথম উপাদান সরিয়ে ফেরত দেয়।</div>
+      <div class="fn-ex"><span class="var">$first</span> = <span class="fn-c">array_shift</span>(<span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_unshift()</div>
+      <div class="fn-desc">অ্যারের শুরুতে উপাদান যোগ করে।</div>
+      <div class="fn-ex"><span class="fn-c">array_unshift</span>(<span class="var">$a</span>, <span class="num">0</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_splice()</div>
+      <div class="fn-desc">নির্দিষ্ট অবস্থান থেকে উপাদান যোগ/বাদ দেয়।</div>
+      <div class="fn-ex"><span class="fn-c">array_splice</span>(<span class="var">$a</span>,<span class="num">1</span>,<span class="num">2</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_merge()</div>
+      <div class="fn-desc">একাধিক অ্যারে একত্রিত করে।</div>
+      <div class="fn-ex"><span class="var">$c</span> = <span class="fn-c">array_merge</span>(<span class="var">$a</span>,<span class="var">$b</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_combine()</div>
+      <div class="fn-desc">দুটি অ্যারেকে key ও value হিসেবে মিলিয়ে দেয়।</div>
+      <div class="fn-ex"><span class="var">$r</span> = <span class="fn-c">array_combine</span>(<span class="var">$k</span>,<span class="var">$v</span>);</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="s1">
+  <div class="sec-header">
+    <div class="sec-badge"><i class="ti ti-info-circle" aria-hidden="true"></i> Information</div>
+    <div class="sec-title">Array Information Functions</div>
+    <div class="sec-desc">অ্যারে সম্পর্কে তথ্য জানার ফাংশন।</div>
+  </div>
+  <div class="fn-grid">
+    <div class="fn-card">
+      <div class="fn-name">count()</div>
+      <div class="fn-desc">অ্যারের উপাদান সংখ্যা গণনা করে।</div>
+      <div class="fn-ex"><span class="kw">echo</span> <span class="fn-c">count</span>(<span class="var">$a</span>); <span class="cm">// 3</span></div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">in_array()</div>
+      <div class="fn-desc">কোনো মান অ্যারেতে আছে কিনা চেক করে।</div>
+      <div class="fn-ex"><span class="fn-c">in_array</span>(<span class="str">"Rahim"</span>, <span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_key_exists()</div>
+      <div class="fn-desc">নির্দিষ্ট key অ্যারেতে আছে কিনা যাচাই করে।</div>
+      <div class="fn-ex"><span class="fn-c">array_key_exists</span>(<span class="str">"name"</span>,<span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_search()</div>
+      <div class="fn-desc">মানের key বা index খুঁজে দেয়।</div>
+      <div class="fn-ex"><span class="var">$k</span> = <span class="fn-c">array_search</span>(<span class="str">"Karim"</span>,<span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_keys()</div>
+      <div class="fn-desc">অ্যারের সব key ফেরত দেয়।</div>
+      <div class="fn-ex"><span class="var">$keys</span> = <span class="fn-c">array_keys</span>(<span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_values()</div>
+      <div class="fn-desc">অ্যারের সব value ফেরত দেয়।</div>
+      <div class="fn-ex"><span class="var">$vals</span> = <span class="fn-c">array_values</span>(<span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">isset()</div>
+      <div class="fn-desc">অ্যারের কোনো key সেট আছে কিনা চেক করে।</div>
+      <div class="fn-ex"><span class="fn-c">isset</span>(<span class="var">$a</span>[<span class="str">"age"</span>]);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">is_array()</div>
+      <div class="fn-desc">ভেরিয়েবলটি অ্যারে কিনা যাচাই করে।</div>
+      <div class="fn-ex"><span class="fn-c">is_array</span>(<span class="var">$a</span>); <span class="cm">// true/false</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="s2">
+  <div class="sec-header">
+    <div class="sec-badge"><i class="ti ti-transform" aria-hidden="true"></i> Transformation</div>
+    <div class="sec-title">Array Transformation Functions</div>
+    <div class="sec-desc">অ্যারের ডেটা রূপান্তর বা পরিবর্তন করার ফাংশন।</div>
+  </div>
+  <div class="fn-grid">
+    <div class="fn-card">
+      <div class="fn-name">array_map()</div>
+      <div class="fn-desc">প্রতিটি উপাদানে ফাংশন প্রয়োগ করে নতুন অ্যারে তৈরি করে।</div>
+      <div class="fn-ex"><span class="var">$r</span> = <span class="fn-c">array_map</span>(<span class="str">'strtoupper'</span>, <span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_filter()</div>
+      <div class="fn-desc">শর্ত অনুযায়ী উপাদান ফিল্টার করে।</div>
+      <div class="fn-ex"><span class="var">$r</span> = <span class="fn-c">array_filter</span>(<span class="var">$a</span>, <span class="kw">fn</span>(<span class="var">$x</span>) <span class="kw">=></span> <span class="var">$x</span> > <span class="num">2</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_reduce()</div>
+      <div class="fn-desc">অ্যারেকে একটি মানে পরিণত করে।</div>
+      <div class="fn-ex"><span class="var">$sum</span> = <span class="fn-c">array_reduce</span>(<span class="var">$a</span>, <span class="kw">fn</span>(<span class="var">$c</span>,<span class="var">$i</span>)<span class="kw">=></span><span class="var">$c</span>+<span class="var">$i</span>, <span class="num">0</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_flip()</div>
+      <div class="fn-desc">key ও value পরস্পর অদলবদল করে।</div>
+      <div class="fn-ex"><span class="var">$r</span> = <span class="fn-c">array_flip</span>(<span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_reverse()</div>
+      <div class="fn-desc">অ্যারের ক্রম উল্টে দেয়।</div>
+      <div class="fn-ex"><span class="var">$r</span> = <span class="fn-c">array_reverse</span>(<span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_unique()</div>
+      <div class="fn-desc">ডুপ্লিকেট মান বাদ দিয়ে অনন্য মান রাখে।</div>
+      <div class="fn-ex"><span class="var">$r</span> = <span class="fn-c">array_unique</span>(<span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_chunk()</div>
+      <div class="fn-desc">অ্যারেকে ছোট ছোট ভাগে বিভক্ত করে।</div>
+      <div class="fn-ex"><span class="var">$r</span> = <span class="fn-c">array_chunk</span>(<span class="var">$a</span>, <span class="num">2</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_slice()</div>
+      <div class="fn-desc">অ্যারের নির্দিষ্ট অংশ বের করে।</div>
+      <div class="fn-ex"><span class="var">$r</span> = <span class="fn-c">array_slice</span>(<span class="var">$a</span>, <span class="num">1</span>, <span class="num">3</span>);</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="s3">
+  <div class="sec-header">
+    <div class="sec-badge"><i class="ti ti-arrows-sort" aria-hidden="true"></i> Sorting</div>
+    <div class="sec-title">Array Sorting Functions</div>
+    <div class="sec-desc">অ্যারের উপাদান বিভিন্নভাবে সাজানোর ফাংশন।</div>
+  </div>
+  <div class="fn-grid">
+    <div class="fn-card">
+      <div class="fn-name">sort()</div>
+      <div class="fn-desc">ছোট থেকে বড় ক্রমে সাজায় (index রিসেট হয়)।</div>
+      <div class="fn-ex"><span class="fn-c">sort</span>(<span class="var">$a</span>); <span class="cm">// [1,2,3,4,5]</span></div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">rsort()</div>
+      <div class="fn-desc">বড় থেকে ছোট ক্রমে সাজায়।</div>
+      <div class="fn-ex"><span class="fn-c">rsort</span>(<span class="var">$a</span>); <span class="cm">// [5,4,3,2,1]</span></div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">asort()</div>
+      <div class="fn-desc">value অনুযায়ী সাজায়, key বজায় রাখে।</div>
+      <div class="fn-ex"><span class="fn-c">asort</span>(<span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">arsort()</div>
+      <div class="fn-desc">value অনুযায়ী উল্টো ক্রমে সাজায়, key বজায় রাখে।</div>
+      <div class="fn-ex"><span class="fn-c">arsort</span>(<span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">ksort()</div>
+      <div class="fn-desc">key অনুযায়ী ক্রমে সাজায়।</div>
+      <div class="fn-ex"><span class="fn-c">ksort</span>(<span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">krsort()</div>
+      <div class="fn-desc">key অনুযায়ী উল্টো ক্রমে সাজায়।</div>
+      <div class="fn-ex"><span class="fn-c">krsort</span>(<span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">usort()</div>
+      <div class="fn-desc">কাস্টম ফাংশন দিয়ে সাজায়।</div>
+      <div class="fn-ex"><span class="fn-c">usort</span>(<span class="var">$a</span>, <span class="kw">fn</span>(<span class="var">$x</span>,<span class="var">$y</span>)<span class="kw">=></span><span class="var">$x</span><span class="kw"><=></span><span class="var">$y</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_multisort()</div>
+      <div class="fn-desc">একাধিক অ্যারে বা কলাম একসাথে সাজায়।</div>
+      <div class="fn-ex"><span class="fn-c">array_multisort</span>(<span class="var">$a</span>, SORT_ASC);</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="s4">
+  <div class="sec-header">
+    <div class="sec-badge"><i class="ti ti-repeat" aria-hidden="true"></i> Iteration</div>
+    <div class="sec-title">Array Iteration Functions</div>
+    <div class="sec-desc">অ্যারের প্রতিটি উপাদারের উপর কাজ করার ফাংশন।</div>
+  </div>
+  <div class="fn-grid">
+    <div class="fn-card">
+      <div class="fn-name">foreach</div>
+      <div class="fn-desc">অ্যারের প্রতিটি উপাদান লুপ করার সবচেয়ে সহজ উপায়।</div>
+      <div class="fn-ex"><span class="kw">foreach</span>(<span class="var">$a</span> <span class="kw">as</span> <span class="var">$k</span><span class="kw">=></span><span class="var">$v</span>){}</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_walk()</div>
+      <div class="fn-desc">প্রতিটি উপাদারে একটি ফাংশন প্রয়োগ করে (মূল অ্যারে পরিবর্তন করে)।</div>
+      <div class="fn-ex"><span class="fn-c">array_walk</span>(<span class="var">$a</span>, <span class="kw">fn</span>(<span class="var">&$v</span>)<span class="kw">=></span><span class="var">$v</span> *= <span class="num">2</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_walk_recursive()</div>
+      <div class="fn-desc">Nested অ্যারের প্রতিটি উপাদারে ফাংশন প্রয়োগ করে।</div>
+      <div class="fn-ex"><span class="fn-c">array_walk_recursive</span>(<span class="var">$a</span>, <span class="var">$fn</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">current() / next() / prev()</div>
+      <div class="fn-desc">অ্যারে পয়েন্টার দিয়ে উপাদার নেভিগেট করে।</div>
+      <div class="fn-ex"><span class="fn-c">current</span>(<span class="var">$a</span>); <span class="fn-c">next</span>(<span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">reset() / end()</div>
+      <div class="fn-desc">পয়েন্টার শুরুতে বা শেষে নিয়ে যায়।</div>
+      <div class="fn-ex"><span class="fn-c">reset</span>(<span class="var">$a</span>); <span class="fn-c">end</span>(<span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">list()</div>
+      <div class="fn-desc">অ্যারের মান সরাসরি ভেরিয়েবলে assign করে।</div>
+      <div class="fn-ex"><span class="fn-c">list</span>(<span class="var">$a</span>,<span class="var">$b</span>) = [<span class="num">1</span>,<span class="num">2</span>];</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="s5">
+  <div class="sec-header">
+    <div class="sec-badge"><i class="ti ti-layout-grid" aria-hidden="true"></i> Multidimensional</div>
+    <div class="sec-title">Multidimensional Arrays Functions</div>
+    <div class="sec-desc">বহুমাত্রিক অ্যারে নিয়ে কাজ করার ফাংশন।</div>
+  </div>
+  <div class="fn-grid">
+    <div class="fn-card">
+      <div class="fn-name">array_column()</div>
+      <div class="fn-desc">2D অ্যারে থেকে নির্দিষ্ট কলামের সব মান বের করে।</div>
+      <div class="fn-ex"><span class="var">$names</span> = <span class="fn-c">array_column</span>(<span class="var">$students</span>, <span class="str">"name"</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_map() (nested)</div>
+      <div class="fn-desc">Nested অ্যারের প্রতিটি উপাদারে ফাংশন প্রয়োগ করে।</div>
+      <div class="fn-ex"><span class="fn-c">array_map</span>(<span class="kw">fn</span>(<span class="var">$r</span>)<span class="kw">=></span><span class="fn-c">array_map</span>(<span class="str">'strtoupper'</span>,<span class="var">$r</span>),<span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">usort() (nested)</div>
+      <div class="fn-desc">2D অ্যারেকে নির্দিষ্ট কলাম অনুযায়ী সাজায়।</div>
+      <div class="fn-ex"><span class="fn-c">usort</span>(<span class="var">$s</span>, <span class="kw">fn</span>(<span class="var">$a</span>,<span class="var">$b</span>)<span class="kw">=></span><span class="var">$a</span>[<span class="str">"age"</span>]<span class="kw"><=></span><span class="var">$b</span>[<span class="str">"age"</span>]);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_multisort()</div>
+      <div class="fn-desc">Multidimensional অ্যারে একাধিক column দিয়ে সাজায়।</div>
+      <div class="fn-ex"><span class="fn-c">array_multisort</span>(<span class="fn-c">array_column</span>(<span class="var">$s</span>,<span class="str">"age"</span>),SORT_ASC,<span class="var">$s</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">foreach (nested)</div>
+      <div class="fn-desc">ভেতরের অ্যারে অ্যাক্সেস করতে nested foreach ব্যবহার হয়।</div>
+      <div class="fn-ex"><span class="kw">foreach</span>(<span class="var">$m</span> <span class="kw">as</span> <span class="var">$row</span>){<span class="kw">foreach</span>(<span class="var">$row</span> <span class="kw">as</span> <span class="var">$v</span>){}}</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_filter() (nested)</div>
+      <div class="fn-desc">2D অ্যারে থেকে শর্ত অনুযায়ী সারি ফিল্টার করে।</div>
+      <div class="fn-ex"><span class="fn-c">array_filter</span>(<span class="var">$s</span>, <span class="kw">fn</span>(<span class="var">$r</span>)<span class="kw">=></span><span class="var">$r</span>[<span class="str">"age"</span>]><span class="num">20</span>);</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="s6">
+  <div class="sec-header">
+    <div class="sec-badge"><i class="ti ti-math" aria-hidden="true"></i> Mathematics</div>
+    <div class="sec-title">Array Mathematics Functions</div>
+    <div class="sec-desc">অ্যারের সংখ্যার উপর গাণিতিক কাজ করার ফাংশন।</div>
+  </div>
+  <div class="fn-grid">
+    <div class="fn-card">
+      <div class="fn-name">array_sum()</div>
+      <div class="fn-desc">অ্যারের সব সংখ্যার যোগফল বের করে।</div>
+      <div class="fn-ex"><span class="kw">echo</span> <span class="fn-c">array_sum</span>([<span class="num">1</span>,<span class="num">2</span>,<span class="num">3</span>]); <span class="cm">// 6</span></div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_product()</div>
+      <div class="fn-desc">অ্যারের সব সংখ্যার গুণফল বের করে।</div>
+      <div class="fn-ex"><span class="kw">echo</span> <span class="fn-c">array_product</span>([<span class="num">1</span>,<span class="num">2</span>,<span class="num">3</span>]); <span class="cm">// 6</span></div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">min()</div>
+      <div class="fn-desc">অ্যারের সবচেয়ে ছোট মান খুঁজে দেয়।</div>
+      <div class="fn-ex"><span class="kw">echo</span> <span class="fn-c">min</span>([<span class="num">3</span>,<span class="num">1</span>,<span class="num">4</span>]); <span class="cm">// 1</span></div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">max()</div>
+      <div class="fn-desc">অ্যারের সবচেয়ে বড় মান খুঁজে দেয়।</div>
+      <div class="fn-ex"><span class="kw">echo</span> <span class="fn-c">max</span>([<span class="num">3</span>,<span class="num">1</span>,<span class="num">4</span>]); <span class="cm">// 4</span></div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_count_values()</div>
+      <div class="fn-desc">প্রতিটি মান কতবার আছে তা গণনা করে।</div>
+      <div class="fn-ex"><span class="fn-c">array_count_values</span>([<span class="str">"a"</span>,<span class="str">"b"</span>,<span class="str">"a"</span>]);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">range()</div>
+      <div class="fn-desc">একটি নির্দিষ্ট পরিসরের সংখ্যার অ্যারে তৈরি করে।</div>
+      <div class="fn-ex"><span class="var">$r</span> = <span class="fn-c">range</span>(<span class="num">1</span>, <span class="num">10</span>);</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="s7">
+  <div class="sec-header">
+    <div class="sec-badge"><i class="ti ti-tool" aria-hidden="true"></i> Utility</div>
+    <div class="sec-title">Array Utility Functions</div>
+    <div class="sec-desc">বিভিন্ন কাজের জন্য সহায়ক ফাংশন।</div>
+  </div>
+  <div class="fn-grid">
+    <div class="fn-card">
+      <div class="fn-name">array_fill()</div>
+      <div class="fn-desc">একটি নির্দিষ্ট মান দিয়ে অ্যারে পূরণ করে।</div>
+      <div class="fn-ex"><span class="var">$r</span> = <span class="fn-c">array_fill</span>(<span class="num">0</span>, <span class="num">5</span>, <span class="str">"PHP"</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_pad()</div>
+      <div class="fn-desc">অ্যারেকে নির্দিষ্ট দৈর্ঘ্যে বাড়িয়ে দেয়।</div>
+      <div class="fn-ex"><span class="var">$r</span> = <span class="fn-c">array_pad</span>(<span class="var">$a</span>, <span class="num">5</span>, <span class="num">0</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_diff()</div>
+      <div class="fn-desc">দুটি অ্যারের পার্থক্য বের করে।</div>
+      <div class="fn-ex"><span class="var">$r</span> = <span class="fn-c">array_diff</span>(<span class="var">$a</span>, <span class="var">$b</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_intersect()</div>
+      <div class="fn-desc">দুটি অ্যারের সাধারণ মান বের করে।</div>
+      <div class="fn-ex"><span class="var">$r</span> = <span class="fn-c">array_intersect</span>(<span class="var">$a</span>, <span class="var">$b</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">compact()</div>
+      <div class="fn-desc">ভেরিয়েবল নাম ব্যবহার করে associative array তৈরি করে।</div>
+      <div class="fn-ex"><span class="var">$r</span> = <span class="fn-c">compact</span>(<span class="str">"name"</span>, <span class="str">"age"</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">extract()</div>
+      <div class="fn-desc">associative array থেকে ভেরিয়েবল তৈরি করে।</div>
+      <div class="fn-ex"><span class="fn-c">extract</span>(<span class="var">$student</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">shuffle()</div>
+      <div class="fn-desc">অ্যারের উপাদান এলোমেলো করে দেয়।</div>
+      <div class="fn-ex"><span class="fn-c">shuffle</span>(<span class="var">$a</span>);</div>
+    </div>
+    <div class="fn-card">
+      <div class="fn-name">array_rand()</div>
+      <div class="fn-desc">অ্যারে থেকে র‍্যান্ডম key বের করে।</div>
+      <div class="fn-ex"><span class="var">$k</span> = <span class="fn-c">array_rand</span>(<span class="var">$a</span>, <span class="num">2</span>);</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+function show(i){
+  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.section').forEach((s,j)=>s.classList.toggle('active',i===j));
+}
+</script>

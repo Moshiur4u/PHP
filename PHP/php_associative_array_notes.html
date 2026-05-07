@@ -1,0 +1,113 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Hind Siliguri',sans-serif;}
+.page{padding:2rem 1.5rem;max-width:680px;}
+.title-badge{display:inline-flex;align-items:center;gap:8px;background:#4F46E5;color:#fff;font-size:13px;font-weight:500;padding:5px 14px;border-radius:20px;margin-bottom:1.5rem;letter-spacing:0.3px;}
+.title-badge .dot{width:7px;height:7px;border-radius:50%;background:#A5B4FC;}
+h1{font-size:22px;font-weight:600;color:var(--color-text-primary);margin-bottom:6px;line-height:1.3;}
+.subtitle{font-size:14px;color:var(--color-text-secondary);margin-bottom:2rem;line-height:1.6;}
+.def-card{background:var(--color-background-secondary);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:1.5rem;border-left:3px solid #6366F1;}
+.def-card p{font-size:15px;color:var(--color-text-primary);line-height:1.75;}
+.def-card strong{font-weight:600;color:#6366F1;}
+.section-label{font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+.section-label::after{content:'';flex:1;height:0.5px;background:var(--color-border-tertiary);}
+.features-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.5rem;}
+.feat-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:10px;padding:1rem 1.1rem;}
+.feat-icon{font-size:20px;color:#6366F1;margin-bottom:8px;}
+.feat-title{font-size:14px;font-weight:600;color:var(--color-text-primary);margin-bottom:4px;}
+.feat-desc{font-size:13px;color:var(--color-text-secondary);line-height:1.6;}
+.code-block{background:#1E1B2E;border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1.5rem;overflow-x:auto;}
+.code-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.code-lang{font-size:11px;color:#7C6FA0;font-family:'Fira Code',monospace;letter-spacing:0.5px;}
+.code-dots{display:flex;gap:5px;}
+.code-dots span{width:8px;height:8px;border-radius:50%;}
+.dot-r{background:#FF5F57;}.dot-y{background:#FEBC2E;}.dot-g{background:#28C840;}
+pre{font-family:'Fira Code',monospace;font-size:13px;line-height:1.8;color:#CDD6F4;}
+.kw{color:#89B4FA;} .fn{color:#A6E3A1;} .str{color:#F38BA8;} .var{color:#CBA6F7;} .cm{color:#6C7086;} .arr{color:#FAB387;} .num{color:#F9E2AF;}
+.compare-table{width:100%;border-collapse:collapse;margin-bottom:1.5rem;font-size:14px;}
+.compare-table th{background:var(--color-background-secondary);color:var(--color-text-secondary);font-weight:500;font-size:12px;letter-spacing:0.5px;padding:10px 14px;text-align:left;border-bottom:0.5px solid var(--color-border-tertiary);}
+.compare-table td{padding:10px 14px;color:var(--color-text-primary);border-bottom:0.5px solid var(--color-border-tertiary);}
+.compare-table tr:last-child td{border-bottom:none;}
+.compare-table .tag{background:#EEF2FF;color:#4338CA;font-size:12px;padding:2px 8px;border-radius:4px;font-family:'Fira Code',monospace;}
+.use-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:0.5rem;}
+.use-chip{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:10px 12px;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--color-text-primary);}
+.use-chip i{color:#6366F1;font-size:17px;}
+</style>
+<div class="page">
+<div class="title-badge"><span class="dot"></span>PHP ধারণা</div>
+<h1>Associative Array</h1>
+<p class="subtitle">যেখানে প্রতিটি মানকে সংখ্যার বদলে অর্থপূর্ণ নাম দিয়ে সনাক্ত করা হয়</p>
+
+<div class="def-card">
+  <p>PHP-তে Associative Array হলো এমন একটি অ্যারে যেখানে প্রতিটি মানকে একটি <strong>স্ট্রিং বা নামযুক্ত কী (Key)</strong> দিয়ে পরিচিতি দেওয়া হয়, সংখ্যাসূচক সূচকের (Numeric Index) পরিবর্তে। এটি ডিকশনারি বা ম্যাপের মতো কাজ করে, যেখানে <strong>key =&gt; value</strong> ফরম্যাট ব্যবহার করা হয়।</p>
+</div>
+
+<div class="section-label">প্রধান বৈশিষ্ট্য</div>
+<div class="features-grid">
+  <div class="feat-card">
+    <div class="feat-icon"><i class="ti ti-code" aria-hidden="true"></i></div>
+    <div class="feat-title">তৈরি করা</div>
+    <div class="feat-desc"><code>array()</code> ফাংশন বা ছোট ব্র্যাকেট <code>[]</code> সিনট্যাক্স ব্যবহার করে তৈরি করা হয়।</div>
+  </div>
+  <div class="feat-card">
+    <div class="feat-icon"><i class="ti ti-key" aria-hidden="true"></i></div>
+    <div class="feat-title">অ্যাক্সেস</div>
+    <div class="feat-desc">সূচকের পরিবর্তে কী (Key) ব্যবহার করে মানগুলোতে পৌঁছানো হয়।</div>
+  </div>
+  <div class="feat-card">
+    <div class="feat-icon"><i class="ti ti-repeat" aria-hidden="true"></i></div>
+    <div class="feat-title">লুপ করা</div>
+    <div class="feat-desc"><code>foreach</code> লুপ ব্যবহার করে কী এবং মান একসাথে অ্যাক্সেস করা যায়।</div>
+  </div>
+  <div class="feat-card">
+    <div class="feat-icon"><i class="ti ti-database" aria-hidden="true"></i></div>
+    <div class="feat-title">ব্যবহার</div>
+    <div class="feat-desc">ইউজার প্রোফাইল, কন্টাক্ট লিস্ট বা অর্থপূর্ণ নামযুক্ত ডেটা সংগঠনে ব্যবহৃত।</div>
+  </div>
+</div>
+
+<div class="section-label">কোড উদাহরণ</div>
+<div class="code-block">
+  <div class="code-header">
+    <div class="code-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+    <span class="code-lang">PHP</span>
+  </div>
+<pre><span class="cm">// তৈরি করা</span>
+<span class="var">$student</span> = [
+    <span class="str">"name"</span>  <span class="kw">=></span> <span class="str">"Rahim"</span>,
+    <span class="str">"age"</span>   <span class="kw">=></span> <span class="num">20</span>,
+    <span class="str">"city"</span>  <span class="kw">=></span> <span class="str">"Dhaka"</span>
+];
+
+<span class="cm">// অ্যাক্সেস</span>
+<span class="kw">echo</span> <span class="var">$student</span>[<span class="str">"name"</span>]; <span class="cm">// Rahim</span>
+<span class="kw">echo</span> <span class="var">$student</span>[<span class="str">"city"</span>]; <span class="cm">// Dhaka</span>
+
+<span class="cm">// foreach লুপ</span>
+<span class="kw">foreach</span> (<span class="var">$student</span> <span class="kw">as</span> <span class="var">$key</span> <span class="kw">=></span> <span class="var">$value</span>) {
+    <span class="kw">echo</span> <span class="str">"<span class="var">$key</span>: <span class="var">$value</span>\n"</span>;
+}</pre>
+</div>
+
+<div class="section-label">Regular vs Associative Array</div>
+<table class="compare-table">
+  <thead>
+    <tr><th>বিষয়</th><th>Regular Array</th><th>Associative Array</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Index ধরন</td><td><span class="tag">0, 1, 2...</span></td><td><span class="tag">"name", "age"...</span></td></tr>
+    <tr><td>অ্যাক্সেস পদ্ধতি</td><td><span class="tag">$arr[0]</span></td><td><span class="tag">$arr["name"]</span></td></tr>
+    <tr><td>ব্যবহার</td><td>তালিকা ডেটা</td><td>key-value ডেটা</td></tr>
+    <tr><td>অর্থপূর্ণতা</td><td>কম স্পষ্ট</td><td>বেশি স্পষ্ট ও বোধগম্য</td></tr>
+  </tbody>
+</table>
+
+<div class="section-label">ব্যবহারিক ক্ষেত্র</div>
+<div class="use-grid">
+  <div class="use-chip"><i class="ti ti-user" aria-hidden="true"></i> ইউজার প্রোফাইল</div>
+  <div class="use-chip"><i class="ti ti-address-book" aria-hidden="true"></i> কন্টাক্ট লিস্ট</div>
+  <div class="use-chip"><i class="ti ti-server" aria-hidden="true"></i> Database Row</div>
+</div>
+</div>
