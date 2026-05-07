@@ -1,5 +1,7 @@
 <?php
 // include ("vendor/autoload.php");
+
+// র- পিএইচপি তে  Composer require দিয়ে Composer ইন্সস্টল করে নিতে হবে।
 include "vendor/autoload.php";
 use League\Csv\Reader;
 $price = 0;
